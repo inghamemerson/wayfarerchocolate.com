@@ -1,0 +1,130 @@
+/*stylelint-disable property-no-vendor-prefix*/
+.animating-link-underline {
+  position: relative;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+
+    &:before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      visibility: visible;
+    }
+  }
+
+  &:before {
+    background-color: #fff;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    visibility: hidden;
+    width: 100%;
+  }
+}
+
+.animating-link-underline.text-blue {
+
+  &:hover {
+    color: $text-blue;
+  }
+
+  &:before {
+    background-color: $fill-blue;
+    height: pxem(2);
+  }
+}
+
+.animating-link-underline.text-white {
+
+  &:hover {
+    color: $text-white;
+  }
+
+  &:before {
+    background-color: $fill-white;
+    height: pxem(2);
+  }
+}
+
+.fade-in-link-underline {
+  position: relative;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit; // default fade effect
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &:before {
+    background-color: inherit; // default fade effect
+    bottom: 0;
+    content: "";
+    height: pxem(1);
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    width: 100%;
+  }
+}
+
+.fade-in-link-underline.text-blue {
+  
+  &:hover {
+    color: $text-blue;
+  }
+
+  &:before {
+    background-color: $fill-blue;
+    height: pxem(2);
+  }
+}
+
+.fade-in-link-underline.text-white {
+
+  &:hover {
+    color: $text-white;
+  }
+
+  &:before {
+    background-color: $fill-white;
+    height: pxem(2);
+  }
+}
+
+.fade-in-link-underline.text-dark-40 {
+
+  &:hover {
+    color: $text-dark-40;
+  }
+
+  &:before {
+    background-color: $fill-dark-40;
+    height: pxem(2);
+  }
+}
+
+.fade-in-link-underline.text-gray {
+
+  &:hover {
+    color: $text-gray;
+  }
+
+  &:before {
+    background-color: $text-gray;
+    height: pxem(2);
+  }
+}
+
+

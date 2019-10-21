@@ -1,0 +1,166 @@
+// // Typography base text & title classes
+// // ------------------------------------
+
+.title {
+
+  &-1 {
+    @include font-smoothing;
+    @include tiempos-headline;
+    $map: (
+      576px: 38px,
+      768px: 40px,
+      992px: 44px,
+      1260px: 50px
+    );
+    line-height: 1.2;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-2 {
+    @include font-smoothing;
+    @include tiempos-headline;
+    $map: (
+      576px: 30px,
+      768px: 32px,
+      992px: 35px,
+      1260px: 40px
+    );
+    line-height: 1.4;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-3 {
+    @include font-smoothing;
+    @include tiempos-headline;
+    $map: (
+      768px: 18px,
+      992px: 21px,
+      1260px: 24px
+    );
+    line-height: 1.2;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+}
+
+.text {
+
+  &-22-semi {
+    @include font-smoothing;
+    @include open-semi-bold;
+    font-size: pxem(22);
+    line-height: pxem(32);
+  }
+
+  &-24-semi {
+    @include font-smoothing;
+    @include open-semi-bold;
+    font-size: pxem(24);
+    line-height: pxem(34);
+  }
+
+  &-18-regular {
+    @include font-smoothing;
+    @include open-regular;
+    font-size: pxem(18);
+    line-height: 1;
+  }
+
+  &-18-semi {
+    @include font-smoothing;
+    @include open-semi-bold;
+    font-size: pxem(18);
+    line-height: 1;
+  }
+
+  &-18-bold {
+    @include font-smoothing;
+    @include open-bold;
+    font-size: pxem(18);
+    line-height: 1;
+  }
+
+  &-14-label {
+    @include font-smoothing;
+    @include open-bold;
+    letter-spacing: pxem(2);
+    text-transform: capitalize;
+    font-size: pxem(14);
+    line-height: pxem(18);
+  }
+
+}
+
+// // Typography Emphasis and Styling
+// // -------------------------
+
+.regular,
+.normal {
+  font-weight: $regular;
+}
+
+.bold {
+  font-weight: $bold;
+}
+
+.semibold {
+  font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.decoration-underline {
+  text-decoration: underline;
+}
+
+.decoration-line-through {
+  text-decoration: line-through;
+}
+
+
+
+// // Typography Alignment
+// // -------------------------
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// // List styles
+// // -------------------------
+// // Unstyled keeps list items block level,
+// // just removes default browser padding and list-style
+
+.list-unstyled {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-flex {
+  display: flex;
+}
+
+.hr {
+  height: pxem(1);
+  width: 100%;
+  border: 0;
+}

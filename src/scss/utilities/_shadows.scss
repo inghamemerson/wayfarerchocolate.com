@@ -1,0 +1,31 @@
+//
+// Shadow Classes
+// --------------------------------------------------
+
+.shadow-interaction {
+  box-shadow: 0 pxem(4) pxem(8) 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow 240ms $t-1;
+
+  &:hover {
+    box-shadow: 0 pxem(10) pxem(14) 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    box-shadow: pxem(2) pxem(4) pxem(6) 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+.shadow-interaction-card {
+  box-shadow: 0 pxem(4) pxem(8) 0 rgba(0, 0, 0, 0.16);
+  transition: box-shadow 240ms $t-1;
+
+  &:hover {
+    box-shadow: 0 pxem(10) pxem(14) 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    box-shadow: pxem(0) pxem(0) pxem(4) 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+

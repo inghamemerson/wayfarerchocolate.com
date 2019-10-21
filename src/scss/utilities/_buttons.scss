@@ -1,0 +1,321 @@
+
+// Button Classes
+// --------------------------------------------------
+
+// Reset Button
+// -------------------------
+// In an article on CSS-Tricks
+// (http://css-tricks.com/use-button-element/),
+// Chris Coyier explains that:
+// "if a button doesn’t have a meaningful
+// href, it’s a <button>"; which makes sense.
+
+// This placeholder resets <button>'s
+// default styling, so we can use
+// <button>s where it makes without
+// worrying about the styling.
+
+@mixin button-reset {
+  background-color: transparent;
+  // Reset unusual Firefox-on-Android default style;
+  // https://github.com/necolas/normalize.css/issues/214
+  background-image: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0;
+
+  &:active {
+    outline: 0;
+  }
+}
+
+.button {
+  @include font-smoothing;
+  @include button-reset;
+  @include open-bold;
+  border-radius: 0;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  // width: 100%;
+
+  @include mq($from: $breakpoint-small) {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.button-large {
+  font-size: pxem(18);
+  line-height: pxem(20);
+  padding: pxem(20) pxem(30);
+}
+
+.button-pink {
+  background-color: $fill-pink;
+  color: $text-white;
+  @include font-smoothing;
+  @include open-bold;
+  transition: background-color 1s ease;
+
+  &:hover {
+    background-color: $fill-dark-pink;
+  }
+}
+
+.button-clear {
+  background-color: transparent;
+  color: $text-white;
+
+  span {
+    border-bottom: pxem(2) solid transparent;
+    transition: border-bottom 0.75s ease;
+  }
+
+  &:hover {
+
+    span {
+      border-bottom: 2px solid $text-white;
+    }
+  }
+}
+
+// // Button Style Mixin
+// // -------------------------
+// // generates every style needed for a new button
+// // when passed the apropriate colors
+// //
+// // $fill-color     - background color for the button
+// // $text-color     - button text color
+// // $secondary-text-color       - text color used with secondary modifier class (defaults to fill color)
+// // $secondary-hover-text-color - background color used with secondary modifier class (defaults to text color)
+
+// @mixin button-style(
+//   $fill-color,
+//   $text-color,
+//   $secondary-text-color: $fill-color,
+//   $secondary-hover-text-color: $text-color
+// ) {
+//   //button state colors
+//   $hover-background-color: darken($fill-color, 15%);
+//   $active-background-color: darken($fill-color, 15%);
+//   $secondary-active-background-color: darken($fill-color, 15%);
+
+//   //base style
+//   background-color: $fill-color;
+//   border: 1px solid transparent;
+//   border-color: $secondary-text-color;
+//   border-radius: 3px;
+//   color: $text-color;
+//   transition: background-color 240ms $t-1;
+
+//   &:hover,
+//   &:focus {
+//     background-color: $hover-background-color;
+//     transition: background-color 300ms $t-1;
+//   }
+
+//   &:active { background-color: $active-background-color; }
+// }
+
+// .button {
+//   @include font-smoothing;
+//   @include button-reset;
+//   @include gotham-semi;
+//   border-radius: 0;
+//   cursor: pointer;
+//   display: block;
+//   font-weight: normal;
+//   line-height: 1;
+//   text-align: center;
+//   text-decoration: none;
+//   white-space: nowrap;
+//   // width: 100%;
+
+//   @include mq($from: $breakpoint-small) {
+//     display: inline-block;
+//     width: auto;
+//   }
+// }
+
+// .button-text {
+
+//   &-arrow {
+
+//     &:after {
+//       // svg background image included below due to color
+//       background-size: cover;
+//       content: "";
+//       display: inline-block;
+//       height: pxem(10);
+//       margin-left: pxem(10);
+//       transition: background-color 240ms $t-1;
+//       width: pxem(11);
+//     }
+//   }
+// }
+
+// // Button Sizes
+// // -------------------------
+// .button-large {
+//   @include font-smoothing;
+//   @include gotham-semi;
+//   font-size: pxem(16);
+//   line-height: 1.88;
+//   padding: pxem(8) pxem(61);
+// }
+
+// .button-text-large {
+//   @include font-smoothing;
+//   @include gotham-semi;
+//   font-size: pxem(16);
+//   line-height: 1.88;
+//   margin: pxem(8) pxem(44);
+// }
+
+// .button-medium {
+//   @include font-smoothing;
+//   @include gotham-semi;
+//   font-size: pxem(16);
+//   line-height: 1.88;
+//   padding: pxem(13) pxem(41);
+// }
+
+// .button-text-medium {
+//   @include font-smoothing;
+//   @include gotham-semi;
+//   font-size: pxem(16);
+//   line-height: 1.88;
+//   margin: pxem(8) pxem(21);
+// }
+
+// .button-small {
+//   @include font-smoothing;
+//   @include gotham-semi;
+//   font-size: pxem(13);
+//   line-height: 1;
+//   padding: pxem(5) pxem(12);
+// }
+
+// .button-header {
+//   @include font-smoothing;
+//   @include gotham-semi;
+//   font-size: pxem(15);
+//   line-height: 1;
+//   padding: pxem(10) pxem(20);
+// }
+
+// .button-text-header {
+//   @include font-smoothing;
+//   @include gotham-semi;
+//   font-size: pxem(15);
+//   line-height: 1;
+//   margin: pxem(10) pxem(20);
+// }
+
+// // .button-light {
+// //   @include button-style($fill-white, $text-black);
+// //   display: inline-flex;
+// //   justify-content: center;
+// //   align-content: center;
+
+// //   &:after {
+// //     content: "";
+// //     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 19 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 8h16-16zM11 1l7 7-7-7zm0 14l7-7-7 7z' fill-rule='nonzero' stroke='%23000000' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+// //     background-size: cover;
+// //     display: inline-block;
+// //     height: pxem(15);
+// //     width: pxem(18);
+// //     margin-left: pxem(10);
+// //   }
+// // }
+
+// // .button-dark {
+// //   background-color: $fill-black;
+// //   color: $text-white;
+// //   display: inline-flex;
+// //   justify-content: center;
+// //   align-content: center;
+// //   border: 1px solid transparent;
+
+// //   &:hover,
+// //   &:focus {
+// //     background-color: lighten($fill-black, 15%);
+// //     transition: background-color 240ms $t-1;
+// //   }
+
+// //   &-arrow {
+
+// //     &:after {
+// //       content: "";
+// //       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 19 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 8h16-16zM11 1l7 7-7-7zm0 14l7-7-7 7z' fill-rule='nonzero' stroke='%23FFFFFF' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+// //       background-size: cover;
+// //       display: inline-block;
+// //       height: pxem(15);
+// //       width: pxem(18);
+// //       margin-left: pxem(10);
+// //       transition: background-color 240ms $t-1;
+// //     }
+// //   }
+// // }
+
+// .button-gray {
+//   @include button-style($fill-dark-75, $text-black);
+// }
+
+// .button-light-gray {
+//   @include button-style($fill-light-gray, $fill-dark-30);
+// }
+
+// .button-green {
+//   @include button-style($fill-green, $text-white);
+// }
+
+// .button-blue {
+//   @include button-style($fill-blue, $text-white);
+// }
+
+// .button-text-arrow.text-blue {
+
+//   &:after {
+//     background-image: url("data:image/svg+xml,%3Csvg width='11' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='nonzero' fill='none'%3E%3Cpath fill='%233A80F7' d='M0 4h9v2H0z'/%3E%3Cpath stroke='%233A80F7' stroke-width='2' d='M5 1l4.07 4L5 9'/%3E%3C/g%3E%3C/svg%3E");
+//   }
+// }
+
+// .button-orange {
+//   @include button-style($fill-orange, $text-white);
+// }
+
+// .button-white {
+//   @include button-style($fill-white, $text-blue);
+// }
+
+// .button-text-arrow.text-white {
+
+//   &:after {
+//     background-image: url("data:image/svg+xml,%3Csvg width='13' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.888 4.42l-2.77-2.722L6.788 0l5.709 5.611-5.71 5.612-1.669-1.699 2.77-2.722H0V4.42h7.888z' fill='%23FFF' fill-rule='nonzero'/%3E%3C/svg%3E");
+//   }
+// }
+
+// .button-small {
+//   font-size: pxem(15);
+//   padding: pxem(20) pxem(20);
+// }
+
+// .button-medium {
+//   font-size: pxem(16);
+//   padding: pxem(18) pxem(40);
+// }
+
+// .button-product {
+//   font-size: pxem(16);
+//   padding: pxem(15) 0;
+//   text-align: center;
+//   width: 100%;
+//   display: block;
+// }
+

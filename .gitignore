@@ -1,0 +1,5 @@
+/node_modules
+**/mix-manifest.json
+.vscode/
+/docs/hot
+hot

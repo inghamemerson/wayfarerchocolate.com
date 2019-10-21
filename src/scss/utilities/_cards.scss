@@ -1,0 +1,58 @@
+//
+// Card Classes
+// --------------------------------------------------
+
+a.card {
+  text-decoration: none;
+}
+
+.card {
+  background-color: $fill-white; // default
+  border-radius: pxem(3);
+  display: block;
+  padding-bottom: pxem(25);
+  padding-left: pxem(20);
+  padding-right: pxem(20);
+  padding-top: pxem(25);
+
+  &-bordered {
+    border-top-style: solid;
+    border-top-width: pxem(6);
+    padding-bottom: pxem(20);
+    padding-left: pxem(20);
+    padding-right: pxem(20);
+    padding-top: pxem(13);
+  }
+}
+
+.card-boxcar {
+  background-color: $fill-white; // default
+  border-radius: pxem(3);
+  display: block;
+  padding: 0;
+
+  &-image-container {
+
+    img {
+      border-top-left-radius: pxem(3);
+      border-top-right-radius: pxem(3);
+      max-width: 100%;
+    }
+  }
+
+  &-content {
+    padding-bottom: pxem(17);
+    padding-left: pxem(20);
+    padding-right: pxem(20);
+    padding-top: pxem(20);
+  }
+}
+
+.card-white {
+  background-color: $fill-white;
+}
+
+.card-bordered-blue {
+  border-top-color: $fill-blue;
+}
+

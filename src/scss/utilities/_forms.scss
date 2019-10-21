@@ -1,0 +1,102 @@
+//
+// Forms Base Styles
+// --------------------------------------------------
+
+.text-input,
+.textarea,
+.select {
+  @include gotham-semi;
+  background-color: $fill-white;
+  border: pxem(1) solid $border-gray;
+  border-radius: pxem(3);
+  box-shadow: inset 0 pxem(1) pxem(3) 0 rgba(0, 0, 0, 0.1);
+  color: $text-dark-20;
+  font-size: pxem(16);
+  line-height: 1;
+  padding: pxem(15);
+  transition: border 240ms $t-1;
+  width: 100%;
+
+  &:focus,
+  &:active {
+    border: pxem(1) solid $fill-blue;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $text-light-gray;
+  }
+
+  &.-error {
+    border: pxem(1) solid $fill-orange;
+  }
+}
+
+label {
+  display: block;
+}
+
+.input-light {
+  background-color: transparent;
+  border: pxem(1) solid $fill-white;
+  box-shadow: none;
+  color: $text-white;
+  
+  &:focus,
+  &:active {
+    border: pxem(1) solid $fill-white;
+  }
+
+  &::placeholder {
+    color: $text-white;
+  }
+}
+
+.capsule-left {
+  border-bottom-left-radius: pxem(3);
+  border-bottom-right-radius: 0;
+  border-top-left-radius: pxem(3);
+  border-top-right-radius: 0;
+}
+
+.capsule-right {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: pxem(3);
+  border-top-left-radius: 0;
+  border-top-right-radius: pxem(3);
+}
+
+/* stylelint-disable property-no-vendor-prefix */
+
+.select {
+  @include gotham-semi;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid $border-gray;
+  border-radius: 0;
+  color: $text-light-gray;
+  font-size: pxem(16);
+  line-height: 1;
+
+  &:focus,
+  &:active {
+    border: 1px solid $fill-blue;
+  }
+}
+
+.select-wrapper {
+  position: relative;
+
+  &:after {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid $fill-dark-40;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    width: 0;
+  }
+}
