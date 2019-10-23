@@ -62,6 +62,7 @@ $t-1:                               cubic-bezier(0.2, 0.3, 0.25, 0.9);
 $fill-black:           #000000;
 $fill-bg:              #f5edda;
 $fill-white:           #FFFFFF;
+$fill-cream:           #f5edda;
 $fill-dark-10:         #1D1D1D !default;
 $fill-dark-15:         #2E2E2E !default;
 $fill-dark-20:         #4A4A4A !default;
@@ -104,7 +105,7 @@ $svg-blue:             "%233A80F7";
 // Shadows
 // -------------------------
 $nav-shadow:           0 2px 0 0 rgba(0, 0, 0, 0.1);
-$card-shadow:           0 2px 20px 0 rgba(0, 0, 0, 0.6);
+$card-shadow:           0 2px 20px 0 rgba(0, 0, 0, 0.3);
 $dropdown-shadow:        0 0 15px 0 rgba(0, 0, 0, 0.15);
 
 // Line height

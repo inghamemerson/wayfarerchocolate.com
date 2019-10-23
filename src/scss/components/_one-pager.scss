@@ -48,7 +48,7 @@
       content: "";
       z-index: 200;
       position: absolute;
-      background-color: $fill-white;
+      background-color: $fill-cream;
       box-shadow: $card-shadow;
       border-radius: pxem(0);
       top: 0;
@@ -57,7 +57,7 @@
       height: 100%;
       transform: rotate(45deg);
       transform-origin: center;
-      border: 2px solid black;
+      // border: 2px solid black;
     }
 
     &-content {
@@ -85,7 +85,8 @@
   &-title {
     margin-left: auto;
     margin-right: auto;
-    @include font-noto;
+    @include font-main;
+    font-size: pxem(32);
     margin-bottom: pxem(20);
     text-align: center;
   }
@@ -93,8 +94,9 @@
   &-intro {
     margin-left: auto;
     margin-right: auto;
-    @include font-noto;
+    @include font-main;
     margin-bottom: pxem(20);
+    font-size: 18px;
     text-align: center;
   }
 
@@ -113,7 +115,8 @@
         color: $text-dark-10;
 
         i {
-          font-size: pxem(40);
+          font-size: pxem(32);
+          margin: 0 7px;
         }
 
         .label {
