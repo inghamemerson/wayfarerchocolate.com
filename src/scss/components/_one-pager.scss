@@ -113,9 +113,16 @@
       a {
         text-decoration: none;
         color: $text-dark-10;
+        opacity: 1;
+        transition: opacity 240ms ease-in-out;
 
-        i {
-          font-size: pxem(32);
+        &:hover {
+          opacity: 0.8;
+        }
+
+        svg {
+          width: pxem(32);
+          height: auto;
           margin: 0 7px;
         }
 
