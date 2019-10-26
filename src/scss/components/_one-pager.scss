@@ -15,7 +15,7 @@
 
   &-bg {
     position: absolute;
-    background-image: url("../images/bars.jpg");
+    background-image: url("../images/wrapper.jpg");
     top: 0;
     left: 0;
     height: 100vh;
@@ -41,7 +41,9 @@
     margin-right: auto;
     position: relative;
     width: 400px;
+    min-width: 400px;
     height: 400px;
+    min-height: 400px;
     z-index: 200;
 
     &:before {
@@ -83,12 +85,27 @@
   }
 
   &-title {
+    // margin-left: auto;
+    // margin-right: auto;
+    // @include font-main;
+    // font-size: pxem(32);
+    // margin-bottom: pxem(20);
+    // text-align: center;
+    clip-path: inset(100%);
+    clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; /* added line */
+    width: 1px;
+  }
+
+  &-wordmark {
+    max-width: pxem(280);
+    margin-bottom: pxem(20);
     margin-left: auto;
     margin-right: auto;
-    @include font-main;
-    font-size: pxem(32);
-    margin-bottom: pxem(20);
-    text-align: center;
   }
 
   &-intro {
