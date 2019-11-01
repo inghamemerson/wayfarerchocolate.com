@@ -15,7 +15,7 @@
 
   &-bg {
     position: absolute;
-    background-image: url("../images/wrapper.jpg");
+    background-image: url("../images/chocolate.jpg");
     top: 0;
     left: 0;
     height: 100vh;
@@ -40,45 +40,68 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 400px;
-    min-width: 400px;
-    height: 400px;
-    min-height: 400px;
+    width: 600px;
+    max-width: 80vw;
+    height: 100vh;
+    min-height: 100vh;
     z-index: 200;
+    display: flex;
+    flex-direction: column;
 
-    &:before {
-      content: "";
-      z-index: 200;
-      position: absolute;
-      background-color: $fill-cream;
-      box-shadow: $card-shadow;
-      border-radius: pxem(0);
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform: rotate(45deg);
-      transform-origin: center;
-      // border: 2px solid black;
-    }
+    // &:before {
+    //   content: "";
+    //   z-index: 200;
+    //   position: absolute;
+    //   background-color: $fill-cream;
+    //   box-shadow: $card-shadow;
+    //   border-radius: pxem(0);
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   transform: rotate(45deg);
+    //   transform-origin: center;
+    //   // border: 2px solid black;
+    // }
 
     &-content {
       z-index: 300;
       position: relative;
-      padding: pxem(40);
+      // padding: pxem(40);
       display: flex;
-      flex-direction: column;
-      flex-grow: 0;
+      // flex-direction: column;
+      flex-grow: 1;
       flex-shrink: 0;
-      flex-basis: auto;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      // flex-basis: auto;
+      // justify-content: center;
+      // align-items: center;
+
+      &-top {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-bottom {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
   &-logo {
     max-width: pxem(100);
-    margin-bottom: pxem(10);
+    margin-bottom: pxem(20);
     border-radius: pxem(100);
     margin-left: auto;
     margin-right: auto;
@@ -99,13 +122,22 @@
     position: absolute;
     white-space: nowrap; /* added line */
     width: 1px;
+    color: $text-white;
   }
 
   &-wordmark {
-    max-width: pxem(280);
+    max-width: pxem(200);
     margin-bottom: pxem(20);
     margin-left: auto;
     margin-right: auto;
+
+    @include mq($from: 768px) {
+      max-width: pxem(300);
+    }
+
+    @include mq($from: 992px) {
+      max-width: pxem(400);
+    }
   }
 
   &-intro {
@@ -113,8 +145,27 @@
     margin-right: auto;
     @include font-main;
     margin-bottom: pxem(20);
-    font-size: 18px;
+    font-size: 24px;
+    color: $text-white;
     text-align: center;
+    max-width: 80vw;
+    @include poly-fluid-sizing('font-size', (576px: 22px, 768px: 24px, 992px: 28px, 1024px: 32px, 1200px: 36px));
+
+    @include mq($from: 768px) {
+      margin-top: 100px;
+    }
+
+    @include mq($from: 992px) {
+      margin-top: 175px;
+    }
+
+    @include mq($from: 1024px) {
+      margin-top: 200px;
+    }
+
+    @include mq($from: 1200px) {
+      margin-top: 300px;
+    }
   }
 
   &-contact {
@@ -141,6 +192,10 @@
           width: pxem(32);
           height: auto;
           margin: 0 7px;
+
+          path {
+            fill: #ffffff;
+          }
         }
 
         .label {
